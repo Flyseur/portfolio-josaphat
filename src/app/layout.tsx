@@ -3,8 +3,8 @@ import { Toaster } from "@/components/ui/toaster"
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Jensen Omega - Développeur de Logiciels',
-  description: 'Portfolio de Jensen Omega, un développeur de logiciels créatif.',
+  title: 'Boua Josaphat Olivier Konan - Développeur Full Stack',
+  description: 'Portfolio de Boua Josaphat Olivier Konan, un développeur full stack créatif.',
 };
 
 export default function RootLayout({

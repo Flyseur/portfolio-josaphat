@@ -12,9 +12,9 @@ export function ProjectsSection() {
     <section id="projects">
       <div className="container mx-auto px-4 md:px-6">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">Projets en vedette</h2>
+          <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">Projets Freelance et Expériences</h2>
           <p className="mt-4 text-lg text-foreground/80">
-            Une sélection de mon travail. Quelque chose vous plaît ? Parlons-en.
+            Voici une sélection de mes travaux et expériences professionnelles.
           </p>
         </div>
 

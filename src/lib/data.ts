@@ -6,27 +6,25 @@ export interface Skill {
 }
 
 export const skills: { [key: string]: Skill[] } = {
-  "Langages & Bases de données": [
-    { name: 'HTML5', icon: 'html' },
-    { name: 'CSS3', icon: 'css' },
+  "Langages": [
+    { name: 'HTML', icon: 'html' },
+    { name: 'CSS', icon: 'css' },
     { name: 'JavaScript', icon: 'javascript' },
-    { name: 'TypeScript', icon: 'typescript' },
+    { name: 'PHP', icon: 'typescript' }, // Using typescript icon for PHP
     { name: 'Python', icon: 'python' },
-    { name: 'Firebase', icon: 'firebase' },
+    { name: 'MySQL', icon: 'firebase' }, // Using firebase icon for MySQL
   ],
-  "Frameworks & Librairies": [
+  "Frameworks": [
     { name: 'React', icon: 'react' },
-    { name: 'Next.js', icon: 'nextjs' },
-    { name: 'Node.js', icon: 'nodejs' },
+    { name: 'Django', icon: 'nextjs' }, // Using nextjs icon for Django
+    { name: 'Laravel', icon: 'nodejs' }, // Using nodejs icon for Laravel
+    { name: 'Flutter', icon: 'react' }, // Using react icon for Flutter
     { name: 'Tailwind CSS', icon: 'tailwind' },
     { name: 'Shadcn/UI', icon: 'shadcn' },
-    { name: 'Framer Motion', icon: 'framer' },
   ],
   "Outils & Plateformes": [
     { name: 'Git & GitHub', icon: 'github' },
-    { name: 'Docker', icon: 'docker' },
     { name: 'Figma', icon: 'figma' },
-    { name: 'Genkit', icon: 'genkit' },
     { name: 'Vercel', icon: 'vercel' },
   ],
 };
@@ -42,35 +40,27 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    title: 'Plateforme E-commerce',
-    description: 'Une solution e-commerce complète avec une interface utilisateur moderne, gestion des produits et un processus de paiement sécurisé.',
-    techStack: ['Next.js', 'React', 'TypeScript', 'Firebase', 'Tailwind CSS'],
+    title: 'Sites Vitrines et E-commerce',
+    description: 'Création de sites vitrines et e-commerce en utilisant HTML, CSS, JavaScript, et des frameworks comme React et Vue.js.',
+    techStack: ['HTML', 'CSS', 'JavaScript', 'React', 'Vue.js'],
     liveLink: '#',
     repoLink: '#',
     image: 'project1'
   },
   {
-    title: 'Application de gestion de tâches',
-    description: 'Un outil collaboratif de gestion de tâches avec des mises à jour en temps réel, authentification des utilisateurs et fonctionnalité de glisser-déposer.',
-    techStack: ['React', 'Firebase', 'Zustand', 'Framer Motion'],
+    title: 'Plateformes Web Dynamiques',
+    description: "Développement de plateformes web dynamiques et interactives, incluant l'authentification, des formulaires et l'intégration de bases de données MySQL.",
+    techStack: ['React', 'MySQL', 'Node.js', 'Express'],
     liveLink: '#',
     repoLink: '#',
     image: 'project2'
   },
   {
-    title: 'Portfolio V1',
-    description: 'Une version précédente de mon portfolio personnel, conçue pour mettre en valeur mes compétences en design et développement.',
-    techStack: ['HTML', 'CSS', 'JavaScript', 'GSAP'],
+    title: 'Responsable Développeur Web',
+    description: "En tant que responsable de la structure informatique chez TektechAfrica, j'ai dirigé la création de sites web et d'applications mobiles.",
+    techStack: ['Management', 'Architecture', 'Développement Web', 'Mobile'],
     liveLink: '#',
     repoLink: '#',
     image: 'project3'
   },
-  {
-    title: 'Interface de Chatbot IA',
-    description: "Une interface utilisateur élégante et réactive pour un chatbot alimenté par l'IA, axée sur l'expérience utilisateur et l'accessibilité.",
-    techStack: ['React', 'TypeScript', 'Vite', 'Shadcn/UI'],
-    liveLink: '#',
-    repoLink: '#',
-    image: 'project4'
-  }
 ];

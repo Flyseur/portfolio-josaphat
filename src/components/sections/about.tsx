@@ -13,14 +13,14 @@ export function AboutSection() {
     },
     {
       icon: <Server className="h-8 w-8 text-primary" />,
-      title: "Hébergement de sites web",
+      title: "Développement back-end",
     }
   ];
 
   const stats = [
-    { value: "120+", label: "Projets terminés" },
-    { value: "95%", label: "Satisfaction client" },
-    { value: "10+", label: "Années d'expérience" },
+    { value: "3+", label: "Projets Freelance" },
+    { value: "1+", label: "Ans d'expérience" },
+    { value: "10+", label: "Technologies maîtrisées" },
   ];
 
   return (
@@ -41,7 +41,7 @@ export function AboutSection() {
           <div className="flex flex-col justify-center">
             <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">À propos de moi</h2>
             <p className="mt-6 text-foreground/80 text-lg">
-              J'ai commencé mon parcours dans le développement de logiciels par la photographie. Grâce à cela, j'ai appris à aimer le processus de création à partir de zéro. Depuis, cela m'a conduit au développement de logiciels, car cela satisfait mon amour pour l'apprentissage et la création.
+              Développeur passionné, étudiant en Informatique et Génie Logiciel. Je conçois des applications web et mobiles efficaces, alliant performance et design, avec un esprit curieux, rigoureux et orienté solution.
             </p>
             <div className="mt-8 grid grid-cols-3 gap-4 text-center">
               {stats.map(stat => (

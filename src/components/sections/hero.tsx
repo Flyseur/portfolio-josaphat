@@ -16,10 +16,10 @@ export function HeroSection() {
           <div className="text-center md:text-left">
             <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
               <span className="block">Bonjour.</span>
-              <span className="block mt-2">Je suis Jensen</span>
+              <span className="block mt-2">Je suis Boua Josaphat</span>
             </h1>
             <p className="mt-4 font-headline text-2xl sm:text-3xl md:text-4xl font-semibold text-foreground/90">
-              Développeur de Logiciels
+              Développeur Full Stack
             </p>
             <div className="mt-8 flex justify-center md:justify-start gap-4">
               <Button asChild size="lg">
@@ -39,12 +39,12 @@ export function HeroSection() {
               <div className="absolute inset-0 rounded-full border-4 border-primary/30"></div>
               <div className="absolute inset-4 rounded-full border-2 border-primary/20"></div>
                <Image
-                src={profileImage.imageUrl}
-                alt="Portrait de Jensen"
+                src="https://picsum.photos/seed/josaphat/500/500"
+                alt="Portrait de Boua Josaphat Olivier Konan"
                 width={400}
                 height={400}
                 className="rounded-full object-cover h-full w-full"
-                data-ai-hint={profileImage.imageHint}
+                data-ai-hint="professional portrait man"
               />
             </div>
           </div>
@@ -55,10 +55,10 @@ export function HeroSection() {
           <span>HTML5</span>
           <span>CSS</span>
           <span>Javascript</span>
-          <span>Node.js</span>
+          <span>PHP</span>
           <span>React</span>
-          <span>Git</span>
-          <span>Github</span>
+          <span>Django</span>
+          <span>MySQL</span>
         </div>
       </div>
     </section>
