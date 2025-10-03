@@ -11,8 +11,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Loader2, Send } from "lucide-react";
+import { Loader2, Send, Mail, Phone, Facebook } from "lucide-react";
+import Link from "next/link";
 
 const contactSchema = z.object({
   name: z.string().min(1, "Le nom est requis"),
@@ -75,15 +75,16 @@ export function ContactSection() {
   return (
     <section id="contact" className="bg-card">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">Contactez-moi</h2>
-          <p className="mt-4 text-lg text-foreground/80">
+        <div className="mx-auto max-w-4xl text-center">
+          <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl animate-fade-in-up">Contactez-moi</h2>
+          <p className="mt-4 text-lg text-foreground/80 animate-fade-in-up animation-delay-200">
             Vous avez un projet en tête ou vous voulez simplement dire bonjour ? Laissez-moi un message.
           </p>
         </div>
 
-        <div className="mt-12 mx-auto max-w-2xl">
-            <form action={formAction} className="space-y-6">
+        <div className="mt-12 mx-auto grid max-w-4xl gap-12 md:grid-cols-2 md:gap-16 items-start">
+          <div className="space-y-6 animate-slide-in-from-left animation-delay-400">
+             <form action={formAction} className="space-y-6">
               <div className="grid gap-6 sm:grid-cols-2">
                 <div className="space-y-2">
                   <Label htmlFor="name">Nom</Label>
@@ -103,6 +104,24 @@ export function ContactSection() {
               </div>
               <SubmitButton />
             </form>
+          </div>
+          <div className="space-y-6 animate-slide-in-from-right animation-delay-600">
+            <h3 className="font-headline text-2xl font-semibold">Ou contactez-moi directement</h3>
+            <ul className="space-y-4 text-lg">
+              <li className="flex items-center gap-4">
+                <Mail className="h-6 w-6 text-primary" />
+                <a href="mailto:josaphatkonan9@gmail.com" className="hover:text-primary transition-colors">josaphatkonan9@gmail.com</a>
+              </li>
+              <li className="flex items-center gap-4">
+                <Phone className="h-6 w-6 text-primary" />
+                <span>+225 05 76 23 06 44</span>
+              </li>
+              <li className="flex items-center gap-4">
+                <Facebook className="h-6 w-6 text-primary" />
+                <Link href="https://www.facebook.com/share/6331aJbWdWfC7T1L/?mibextid=LQQJ4d" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Josaphat Konan</Link>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>

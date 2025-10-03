@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Github, Linkedin, Twitter } from 'lucide-react';
+import { Github, Linkedin, Twitter, Facebook } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 export function Footer() {
@@ -18,6 +18,11 @@ export function Footer() {
           <Button variant="ghost" size="icon" asChild>
             <Link href="https://www.linkedin.com/in/josaphat-olivier-boua-515a98295/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
               <Linkedin className="h-5 w-5" />
+            </Link>
+          </Button>
+           <Button variant="ghost" size="icon" asChild>
+            <Link href="https://www.facebook.com/share/6331aJbWdWfC7T1L/?mibextid=LQQJ4d" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <Facebook className="h-5 w-5" />
             </Link>
           </Button>
           <Button variant="ghost" size="icon" asChild>
