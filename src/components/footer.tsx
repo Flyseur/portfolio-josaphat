@@ -11,7 +11,7 @@ export function Footer() {
         </p>
         <div className="flex items-center gap-2">
           <Button variant="ghost" size="icon" asChild>
-            <Link href="#" aria-label="GitHub">
+            <Link href="https://github.com/Flyseur?tab=repositories" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
               <Github className="h-5 w-5" />
             </Link>
           </Button>
