@@ -29,7 +29,7 @@ export function AboutSection() {
         <div className="grid gap-16 md:grid-cols-2">
           <div className="flex flex-col gap-8">
             {services.map((service, index) => (
-              <div key={index} className="flex items-start gap-4">
+              <div key={index} className="flex items-start gap-4 animate-fade-in-up" style={{ animationDelay: `${index * 200}ms`}}>
                 <div className="flex flex-col items-center">
                    {service.icon}
                    {index < services.length - 1 && <div className="mt-4 h-16 w-px bg-border"></div>}
@@ -38,14 +38,14 @@ export function AboutSection() {
               </div>
             ))}
           </div>
-          <div className="flex flex-col justify-center">
+          <div className="flex flex-col justify-center animate-fade-in-up animation-delay-200">
             <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">À propos de moi</h2>
             <p className="mt-6 text-foreground/80 text-lg">
               Développeur passionné, étudiant en Informatique et Génie Logiciel. Je conçois des applications web et mobiles efficaces, alliant performance et design, avec un esprit curieux, rigoureux et orienté solution.
             </p>
             <div className="mt-8 grid grid-cols-3 gap-4 text-center">
-              {stats.map(stat => (
-                <div key={stat.label}>
+              {stats.map((stat, index) => (
+                <div key={stat.label} className="animate-fade-in-up" style={{ animationDelay: `${(index * 200) + 400}ms`}}>
                   <p className="font-headline text-4xl font-bold text-primary">{stat.value}</p>
                   <p className="mt-2 text-muted-foreground">{stat.label}</p>
                 </div>

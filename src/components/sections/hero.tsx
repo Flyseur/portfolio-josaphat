@@ -5,23 +5,23 @@ import { getPlaceholderImage } from "@/lib/placeholder-images";
 
 export function HeroSection() {
   const profileImage = getPlaceholderImage('profile') ?? {
-    imageUrl: 'https://picsum.photos/seed/profile/500/500',
-    imageHint: 'professional portrait',
+    imageUrl: 'https://storage.googleapis.com/project-os-frontend-bucket/production/1759530495372/W-P5_LqC/image.png',
+    imageHint: 'professional portrait man',
   };
 
   return (
-    <section id="home" className="pt-24 pb-12 md:pt-32 md:pb-20">
+    <section id="home" className="pt-24 pb-12 md:pt-32 md:pb-20 overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div className="text-center md:text-left">
-            <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
+            <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl animate-fade-in-up">
               <span className="block">Bonjour.</span>
               <span className="block mt-2">Je suis Boua Josaphat</span>
             </h1>
-            <p className="mt-4 font-headline text-2xl sm:text-3xl md:text-4xl font-semibold text-foreground/90">
+            <p className="mt-4 font-headline text-2xl sm:text-3xl md:text-4xl font-semibold text-foreground/90 animate-fade-in-up animation-delay-200">
               Développeur Full Stack
             </p>
-            <div className="mt-8 flex justify-center md:justify-start gap-4">
+            <div className="mt-8 flex justify-center md:justify-start gap-4 animate-fade-in-up animation-delay-400">
               <Button asChild size="lg">
                 <Link href="#projects">
                   Un projet ?
@@ -34,7 +34,7 @@ export function HeroSection() {
               </Button>
             </div>
           </div>
-          <div className="relative flex justify-center">
+          <div className="relative flex justify-center animate-fade-in-up animation-delay-600">
             <div className="relative h-64 w-64 md:h-80 md:w-80 lg:h-96 lg:w-96">
               <div className="absolute inset-0 rounded-full border-4 border-primary/30"></div>
               <div className="absolute inset-4 rounded-full border-2 border-primary/20"></div>
@@ -45,12 +45,13 @@ export function HeroSection() {
                 height={400}
                 className="rounded-full object-cover h-full w-full"
                 data-ai-hint={profileImage.imageHint}
+                priority
               />
             </div>
           </div>
         </div>
       </div>
-      <div className="container mx-auto px-4 md:px-6 mt-20">
+      <div className="container mx-auto px-4 md:px-6 mt-20 animate-fade-in-up animation-delay-600">
         <div className="flex justify-around items-center text-muted-foreground font-medium text-lg">
           <span>HTML5</span>
           <span>CSS</span>
