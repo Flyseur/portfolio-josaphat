@@ -63,4 +63,12 @@ export const projects: Project[] = [
     repoLink: '#',
     image: 'project3'
   },
+  {
+    title: 'Application Mobile Flutter',
+    description: "Développement d'une application mobile multiplateforme avec Flutter pour une expérience utilisateur native et fluide sur iOS et Android.",
+    techStack: ['Flutter', 'Dart', 'Firebase'],
+    liveLink: '#',
+    repoLink: '#',
+    image: 'project4'
+  },
 ];
