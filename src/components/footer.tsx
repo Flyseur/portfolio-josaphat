@@ -21,7 +21,7 @@ export function Footer() {
             </Link>
           </Button>
            <Button variant="ghost" size="icon" asChild>
-            <Link href="https://www.facebook.com/share/6331aJbWdWfC7T1L/?mibextid=LQQJ4d" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <Link href="https://www.facebook.com/profile.php?id=100007390037739" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
               <Facebook className="h-5 w-5" />
             </Link>
           </Button>

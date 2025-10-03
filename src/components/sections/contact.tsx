@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useActionState } from "react";
+import { useEffect } from "react";
+import { useActionState } from "react";
 import { useFormStatus } from "react-dom";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -118,7 +119,7 @@ export function ContactSection() {
               </li>
               <li className="flex items-center gap-4">
                 <Facebook className="h-6 w-6 text-primary" />
-                <Link href="https://www.facebook.com/share/6331aJbWdWfC7T1L/?mibextid=LQQJ4d" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Josaphat Konan</Link>
+                <Link href="https://www.facebook.com/profile.php?id=100007390037739" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Josaphat Konan</Link>
               </li>
             </ul>
           </div>
