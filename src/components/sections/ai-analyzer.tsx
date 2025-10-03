@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { useRunFlow } from "@genkit-ai/next/client";
-import { analyzePortfolioAndSuggest } from "@/ai/flows/portfolio-design-suggestions";
+import { runFlow } from "@genkit-ai/next/client";
+import { analyzePortfolioAndSuggest, type AnalyzePortfolioOutput } from "@/ai/flows/portfolio-design-suggestions";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -13,23 +13,33 @@ import { useToast } from "@/hooks/use-toast";
 export function AiAnalyzerSection() {
   const [portfolioUrl, setPortfolioUrl] = useState("");
   const { toast } = useToast();
-  const { run, data: suggestions, error, running } = useRunFlow(
-    analyzePortfolioAndSuggest,
-    {
-      onError: (err) => {
-        toast({
-          variant: "destructive",
-          title: "An error occurred",
-          description: err.message,
-        });
-      },
-    }
-  );
+  
+  const [suggestions, setSuggestions] = useState<AnalyzePortfolioOutput | null>(null);
+  const [error, setError] = useState<Error | null>(null);
+  const [running, setRunning] = useState(false);
+
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!portfolioUrl.trim()) return;
-    run({ portfolioUrl });
+    if (!portfolioUrl.trim() || running) return;
+
+    setRunning(true);
+    setError(null);
+    setSuggestions(null);
+
+    try {
+      const result = await runFlow(analyzePortfolioAndSuggest, { portfolioUrl });
+      setSuggestions(result);
+    } catch (err: any) {
+      setError(err);
+      toast({
+        variant: "destructive",
+        title: "An error occurred",
+        description: err.message || "Could not analyze the portfolio.",
+      });
+    } finally {
+      setRunning(false);
+    }
   };
 
   return (
@@ -92,7 +102,7 @@ export function AiAnalyzerSection() {
                <Alert variant="destructive" className="mt-6">
                   <AlertTitle>Analysis Failed</AlertTitle>
                   <AlertDescription>
-                    Could not analyze the portfolio. Please check the URL and try again.
+                    {error.message || 'Could not analyze the portfolio. Please check the URL and try again.'}
                   </AlertDescription>
                 </Alert>
             )}
