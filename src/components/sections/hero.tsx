@@ -39,7 +39,7 @@ export function HeroSection() {
               <div className="absolute inset-0 rounded-full border-4 border-primary/30"></div>
               <div className="absolute inset-4 rounded-full border-2 border-primary/20"></div>
                <Image
-                src="https://picsum.photos/seed/josaphat/500/500"
+                src="https://storage.googleapis.com/project-os-frontend-bucket/production/1759530495372/W-P5_LqC/image.png"
                 alt="Portrait de Boua Josaphat Olivier Konan"
                 width={400}
                 height={400}
