@@ -11,7 +11,7 @@ export function ProjectsSection() {
   return (
     <section id="projects">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="mx-auto max-w-2xl text-center">
+        <div className="mx-auto max-w-2xl text-center animate-fade-in-up">
           <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">Projets Freelance et Expériences</h2>
           <p className="mt-4 text-lg text-foreground/80">
             Voici une sélection de mes travaux et expériences professionnelles.
@@ -19,10 +19,10 @@ export function ProjectsSection() {
         </div>
 
         <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-2">
-          {projects.map((project) => {
+          {projects.map((project, index) => {
             const projectImage = getPlaceholderImage(project.image);
             return (
-              <Card key={project.title} className="flex flex-col overflow-hidden bg-card">
+              <Card key={project.title} className="flex flex-col overflow-hidden bg-card animate-fade-in-up transition-transform duration-300 hover:-translate-y-2" style={{ animationDelay: `${index * 200}ms` }}>
                 {projectImage && (
                   <div className="relative aspect-[3/2] w-full">
                     <Image
