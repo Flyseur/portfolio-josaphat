@@ -111,7 +111,7 @@ export function ContactSection() {
             <ul className="space-y-4 text-lg">
               <li className="flex items-center gap-4">
                 <Mail className="h-6 w-6 text-primary" />
-                <a href="mailto:josaphatkonan9@gmail.com" className="hover:text-primary transition-colors">josaphatkonan9@gmail.com</a>
+                <a href="mailto:josaphatboua220@gmail.com" className="hover:text-primary transition-colors">josaphatboua220@gmail.com</a>
               </li>
               <li className="flex items-center gap-4">
                 <Phone className="h-6 w-6 text-primary" />
@@ -119,7 +119,7 @@ export function ContactSection() {
               </li>
               <li className="flex items-center gap-4">
                 <Facebook className="h-6 w-6 text-primary" />
-                <Link href="https://www.facebook.com/profile.php?id=100007390037739" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Josaphat Konan</Link>
+                <Link href="https://www.facebook.com/profile.php?id=100007390037739" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Boua Olivier Josaphat</Link>
               </li>
             </ul>
           </div>
