@@ -6,7 +6,7 @@ export interface Skill {
 }
 
 export const skills: { [key: string]: Skill[] } = {
-  "Languages & Databases": [
+  "Langages & Bases de données": [
     { name: 'HTML5', icon: 'html' },
     { name: 'CSS3', icon: 'css' },
     { name: 'JavaScript', icon: 'javascript' },
@@ -14,7 +14,7 @@ export const skills: { [key: string]: Skill[] } = {
     { name: 'Python', icon: 'python' },
     { name: 'Firebase', icon: 'firebase' },
   ],
-  "Frameworks & Libraries": [
+  "Frameworks & Librairies": [
     { name: 'React', icon: 'react' },
     { name: 'Next.js', icon: 'nextjs' },
     { name: 'Node.js', icon: 'nodejs' },
@@ -22,7 +22,7 @@ export const skills: { [key: string]: Skill[] } = {
     { name: 'Shadcn/UI', icon: 'shadcn' },
     { name: 'Framer Motion', icon: 'framer' },
   ],
-  "Tools & Platforms": [
+  "Outils & Plateformes": [
     { name: 'Git & GitHub', icon: 'github' },
     { name: 'Docker', icon: 'docker' },
     { name: 'Figma', icon: 'figma' },
@@ -42,32 +42,32 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    title: 'E-commerce Platform',
-    description: 'A full-stack e-commerce solution with a modern UI, product management, and a secure checkout process.',
+    title: 'Plateforme E-commerce',
+    description: 'Une solution e-commerce complète avec une interface utilisateur moderne, gestion des produits et un processus de paiement sécurisé.',
     techStack: ['Next.js', 'React', 'TypeScript', 'Firebase', 'Tailwind CSS'],
     liveLink: '#',
     repoLink: '#',
     image: 'project1'
   },
   {
-    title: 'Task Management App',
-    description: 'A collaborative task management tool with real-time updates, user authentication, and drag-and-drop functionality.',
+    title: 'Application de gestion de tâches',
+    description: 'Un outil collaboratif de gestion de tâches avec des mises à jour en temps réel, authentification des utilisateurs et fonctionnalité de glisser-déposer.',
     techStack: ['React', 'Firebase', 'Zustand', 'Framer Motion'],
     liveLink: '#',
     repoLink: '#',
     image: 'project2'
   },
   {
-    title: 'Portfolio Website V1',
-    description: 'A previous version of my personal portfolio, built to showcase my design and development skills.',
+    title: 'Portfolio V1',
+    description: 'Une version précédente de mon portfolio personnel, conçue pour mettre en valeur mes compétences en design et développement.',
     techStack: ['HTML', 'CSS', 'JavaScript', 'GSAP'],
     liveLink: '#',
     repoLink: '#',
     image: 'project3'
   },
   {
-    title: 'AI Chatbot Interface',
-    description: 'A sleek and responsive user interface for an AI-powered chatbot, focusing on user experience and accessibility.',
+    title: 'Interface de Chatbot IA',
+    description: "Une interface utilisateur élégante et réactive pour un chatbot alimenté par l'IA, axée sur l'expérience utilisateur et l'accessibilité.",
     techStack: ['React', 'TypeScript', 'Vite', 'Shadcn/UI'],
     liveLink: '#',
     repoLink: '#',

@@ -1,34 +1,55 @@
-import Image from 'next/image';
-import { getPlaceholderImage } from '@/lib/placeholder-images';
+import { Code, Smartphone, Server } from 'lucide-react';
 
 export function AboutSection() {
-  const profileImage = getPlaceholderImage('profile') ?? {
-    imageUrl: 'https://picsum.photos/seed/profile/500/500',
-    imageHint: 'professional portrait',
-  };
+
+  const services = [
+    {
+      icon: <Code className="h-8 w-8 text-primary" />,
+      title: "Développement de sites web",
+    },
+    {
+      icon: <Smartphone className="h-8 w-8 text-primary" />,
+      title: "Développement d'applications",
+    },
+    {
+      icon: <Server className="h-8 w-8 text-primary" />,
+      title: "Hébergement de sites web",
+    }
+  ];
+
+  const stats = [
+    { value: "120+", label: "Projets terminés" },
+    { value: "95%", label: "Satisfaction client" },
+    { value: "10+", label: "Années d'expérience" },
+  ];
 
   return (
-    <section id="about" className="bg-secondary">
+    <section id="about" className="bg-card">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="grid gap-12 md:grid-cols-2 md:gap-16">
-          <div className="flex flex-col justify-center">
-            <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">About Me</h2>
-            <p className="mt-4 text-foreground/80">
-              I'm a passionate developer with a knack for turning complex problems into elegant, user-friendly solutions. With a background in both front-end and back-end development, I thrive on building comprehensive and high-performance web applications.
-            </p>
-            <p className="mt-4 text-foreground/80">
-              My journey in tech is driven by a constant curiosity and a desire to learn new technologies. I believe that the best products are born from a blend of solid engineering, creative design, and a deep understanding of user needs. When I'm not coding, I enjoy exploring new design trends and contributing to open-source projects.
-            </p>
+        <div className="grid gap-16 md:grid-cols-2">
+          <div className="flex flex-col gap-8">
+            {services.map((service, index) => (
+              <div key={index} className="flex items-start gap-4">
+                <div className="flex flex-col items-center">
+                   {service.icon}
+                   {index < services.length - 1 && <div className="mt-4 h-16 w-px bg-border"></div>}
+                </div>
+                <h3 className="mt-1 font-headline text-xl font-semibold">{service.title}</h3>
+              </div>
+            ))}
           </div>
-          <div className="flex items-center justify-center">
-            <div className="relative h-64 w-64 overflow-hidden rounded-full shadow-lg md:h-80 md:w-80">
-               <Image
-                src={profileImage.imageUrl}
-                alt="A portrait of the developer"
-                fill
-                className="object-cover"
-                data-ai-hint={profileImage.imageHint}
-              />
+          <div className="flex flex-col justify-center">
+            <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">À propos de moi</h2>
+            <p className="mt-6 text-foreground/80 text-lg">
+              J'ai commencé mon parcours dans le développement de logiciels par la photographie. Grâce à cela, j'ai appris à aimer le processus de création à partir de zéro. Depuis, cela m'a conduit au développement de logiciels, car cela satisfait mon amour pour l'apprentissage et la création.
+            </p>
+            <div className="mt-8 grid grid-cols-3 gap-4 text-center">
+              {stats.map(stat => (
+                <div key={stat.label}>
+                  <p className="font-headline text-4xl font-bold text-primary">{stat.value}</p>
+                  <p className="mt-2 text-muted-foreground">{stat.label}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>

@@ -15,9 +15,9 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Loader2, Send } from "lucide-react";
 
 const contactSchema = z.object({
-  name: z.string().min(1, "Name is required"),
-  email: z.string().email("Invalid email address"),
-  message: z.string().min(1, "Message is required"),
+  name: z.string().min(1, "Le nom est requis"),
+  email: z.string().email("Adresse e-mail invalide"),
+  message: z.string().min(1, "Le message est requis"),
 });
 
 type ContactFormValues = z.infer<typeof contactSchema>;
@@ -31,14 +31,14 @@ const initialState = {
 function SubmitButton() {
   const { pending } = useFormStatus();
   return (
-    <Button type="submit" disabled={pending} className="w-full bg-accent hover:bg-accent/90 text-accent-foreground sm:w-auto">
+    <Button type="submit" disabled={pending} className="w-full sm:w-auto">
       {pending ? (
         <>
-          <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Sending...
+          <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Envoi...
         </>
       ) : (
         <>
-          Send Message <Send className="ml-2 h-4 w-4" />
+          Envoyer le message <Send className="ml-2 h-4 w-4" />
         </>
       )}
     </Button>
@@ -56,14 +56,14 @@ export function ContactSection() {
     if (state.message) {
       if (state.success) {
         toast({
-          title: "Success!",
+          title: "Succès !",
           description: state.message,
         });
         reset();
       } else {
         toast({
           variant: "destructive",
-          title: "Oops!",
+          title: "Oups !",
           description: state.message,
         });
       }
@@ -73,43 +73,37 @@ export function ContactSection() {
   const allErrors = { ...errors, ...state.errors };
 
   return (
-    <section id="contact">
+    <section id="contact" className="bg-card">
       <div className="container mx-auto px-4 md:px-6">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">Get in Touch</h2>
+          <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">Contactez-moi</h2>
           <p className="mt-4 text-lg text-foreground/80">
-            Have a project in mind or just want to say hello? Drop me a line.
+            Vous avez un projet en tête ou vous voulez simplement dire bonjour ? Laissez-moi un message.
           </p>
         </div>
 
-        <Card className="mt-12 mx-auto max-w-2xl">
-          <CardHeader>
-            <CardTitle className="font-headline">Contact Me</CardTitle>
-            <CardDescription>I'll get back to you as soon as possible.</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <form action={formAction} className="space-y-4">
-              <div className="grid gap-4 sm:grid-cols-2">
+        <div className="mt-12 mx-auto max-w-2xl">
+            <form action={formAction} className="space-y-6">
+              <div className="grid gap-6 sm:grid-cols-2">
                 <div className="space-y-2">
-                  <Label htmlFor="name">Name</Label>
-                  <Input id="name" {...register("name")} />
+                  <Label htmlFor="name">Nom</Label>
+                  <Input id="name" {...register("name")} className="bg-input" />
                   {allErrors?.name && <p className="text-sm text-destructive">{allErrors.name[0]}</p>}
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="email">Email</Label>
-                  <Input id="email" type="email" {...register("email")} />
+                  <Input id="email" type="email" {...register("email")} className="bg-input"/>
                   {allErrors?.email && <p className="text-sm text-destructive">{allErrors.email[0]}</p>}
                 </div>
               </div>
               <div className="space-y-2">
                 <Label htmlFor="message">Message</Label>
-                <Textarea id="message" className="min-h-[120px]" {...register("message")} />
+                <Textarea id="message" className="min-h-[120px] bg-input" {...register("message")} />
                 {allErrors?.message && <p className="text-sm text-destructive">{allErrors.message[0]}</p>}
               </div>
               <SubmitButton />
             </form>
-          </CardContent>
-        </Card>
+        </div>
       </div>
     </section>
   );

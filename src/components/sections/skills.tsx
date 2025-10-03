@@ -7,15 +7,15 @@ export function SkillsSection() {
     <section id="skills">
       <div className="container mx-auto px-4 md:px-6">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">Technical Skills</h2>
+          <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">Compétences Techniques</h2>
           <p className="mt-4 text-lg text-foreground/80">
-            A snapshot of the technologies, languages, and tools I work with.
+            Un aperçu des technologies, langages et outils avec lesquels je travaille.
           </p>
         </div>
 
         <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {Object.entries(skills).map(([category, skillList]) => (
-            <Card key={category} className="flex flex-col">
+            <Card key={category} className="flex flex-col bg-card">
               <CardHeader>
                 <CardTitle className="font-headline text-xl">{category}</CardTitle>
               </CardHeader>

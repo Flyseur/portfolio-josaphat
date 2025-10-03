@@ -34,8 +34,8 @@ export function AiAnalyzerSection() {
       setError(err);
       toast({
         variant: "destructive",
-        title: "An error occurred",
-        description: err.message || "Could not analyze the portfolio.",
+        title: "Une erreur est survenue",
+        description: err.message || "Impossible d'analyser le portfolio.",
       });
     } finally {
       setRunning(false);
@@ -47,21 +47,21 @@ export function AiAnalyzerSection() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
-            AI Portfolio Analyzer
+            Analyseur de Portfolio IA
           </h2>
           <p className="mt-4 text-lg text-foreground/80">
-            Get AI-powered design suggestions for any developer portfolio.
+            Obtenez des suggestions de design basées sur l'IA pour n'importe quel portfolio de développeur.
           </p>
         </div>
 
-        <Card className="mt-12 mx-auto max-w-2xl">
+        <Card className="mt-12 mx-auto max-w-2xl bg-card">
           <CardHeader>
             <CardTitle className="flex items-center gap-2 font-headline">
               <Wand2 className="text-primary" />
-              Analyze a Portfolio
+              Analyser un Portfolio
             </CardTitle>
             <CardDescription>
-              Enter a URL to get instant feedback based on current design trends.
+              Entrez une URL pour obtenir un retour instantané basé sur les tendances de design actuelles.
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -73,17 +73,18 @@ export function AiAnalyzerSection() {
                 onChange={(e) => setPortfolioUrl(e.target.value)}
                 disabled={running}
                 required
+                className="bg-input"
               />
-              <Button type="submit" disabled={running} className="bg-accent hover:bg-accent/90 text-accent-foreground">
+              <Button type="submit" disabled={running}>
                 {running ? (
                   <>
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                    Analyzing...
+                    Analyse en cours...
                   </>
                 ) : (
                   <>
                     <Sparkles className="mr-2 h-4 w-4" />
-                    Get Suggestions
+                    Obtenir des suggestions
                   </>
                 )}
               </Button>
@@ -100,9 +101,9 @@ export function AiAnalyzerSection() {
             )}
             {error && !running && (
                <Alert variant="destructive" className="mt-6">
-                  <AlertTitle>Analysis Failed</AlertTitle>
+                  <AlertTitle>L'analyse a échoué</AlertTitle>
                   <AlertDescription>
-                    {error.message || 'Could not analyze the portfolio. Please check the URL and try again.'}
+                    {error.message || "Impossible d'analyser le portfolio. Veuillez vérifier l'URL et réessayer."}
                   </AlertDescription>
                 </Alert>
             )}

@@ -9,12 +9,12 @@ import { ExternalLink, Github } from 'lucide-react';
 
 export function ProjectsSection() {
   return (
-    <section id="projects" className="bg-secondary">
+    <section id="projects">
       <div className="container mx-auto px-4 md:px-6">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">Featured Projects</h2>
+          <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">Projets en vedette</h2>
           <p className="mt-4 text-lg text-foreground/80">
-            A selection of my work. See something you like? Let's talk.
+            Une sélection de mon travail. Quelque chose vous plaît ? Parlons-en.
           </p>
         </div>
 
@@ -22,7 +22,7 @@ export function ProjectsSection() {
           {projects.map((project) => {
             const projectImage = getPlaceholderImage(project.image);
             return (
-              <Card key={project.title} className="flex flex-col overflow-hidden">
+              <Card key={project.title} className="flex flex-col overflow-hidden bg-card">
                 {projectImage && (
                   <div className="relative aspect-[3/2] w-full">
                     <Image
@@ -45,15 +45,15 @@ export function ProjectsSection() {
                     ))}
                   </div>
                 </CardContent>
-                <CardFooter className="flex gap-4">
+                <CardFooter className="flex gap-4 bg-card pt-6">
                   <Button asChild variant="outline">
                     <Link href={project.repoLink} target="_blank" rel="noopener noreferrer">
-                      <Github className="mr-2 h-4 w-4" /> Repository
+                      <Github className="mr-2 h-4 w-4" /> Dépôt
                     </Link>
                   </Button>
                   <Button asChild>
                     <Link href={project.liveLink} target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="mr-2 h-4 w-4" /> Live Demo
+                      <ExternalLink className="mr-2 h-4 w-4" /> Démo Live
                     </Link>
                   </Button>
                 </CardFooter>

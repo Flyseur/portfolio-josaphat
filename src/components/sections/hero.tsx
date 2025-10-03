@@ -1,31 +1,64 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Mail } from "lucide-react";
+import { getPlaceholderImage } from "@/lib/placeholder-images";
 
 export function HeroSection() {
+  const profileImage = getPlaceholderImage('profile') ?? {
+    imageUrl: 'https://picsum.photos/seed/profile/500/500',
+    imageHint: 'professional portrait',
+  };
+
   return (
-    <section id="hero" className="bg-background">
-      <div className="container mx-auto px-4 py-24 text-center md:px-6 md:py-32 lg:py-40">
-        <div className="max-w-4xl mx-auto">
-          <p className="font-headline text-primary">Alexandre Dubois</p>
-          <h1 className="mt-2 font-headline text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
-            Creative Full-Stack Developer & UI Enthusiast
-          </h1>
-          <p className="mt-6 text-lg leading-8 text-foreground/80 sm:text-xl">
-            Building seamless digital experiences with a passion for clean code and sophisticated design.
-          </p>
-          <div className="mt-10 flex items-center justify-center gap-x-6">
-            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
-              <Link href="#contact">
-                Get in Touch <Mail className="ml-2" />
-              </Link>
-            </Button>
-            <Button asChild variant="outline" size="lg">
-              <Link href="#projects">
-                View My Work <ArrowRight className="ml-2" />
-              </Link>
-            </Button>
+    <section id="home" className="pt-24 pb-12 md:pt-32 md:pb-20">
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div className="text-center md:text-left">
+            <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
+              <span className="block">Bonjour.</span>
+              <span className="block mt-2">Je suis Jensen</span>
+            </h1>
+            <p className="mt-4 font-headline text-2xl sm:text-3xl md:text-4xl font-semibold text-foreground/90">
+              Développeur de Logiciels
+            </p>
+            <div className="mt-8 flex justify-center md:justify-start gap-4">
+              <Button asChild size="lg">
+                <Link href="#projects">
+                  Un projet ?
+                </Link>
+              </Button>
+              <Button asChild variant="outline" size="lg">
+                <Link href="#">
+                  Mon CV
+                </Link>
+              </Button>
+            </div>
           </div>
+          <div className="relative flex justify-center">
+            <div className="relative h-64 w-64 md:h-80 md:w-80 lg:h-96 lg:w-96">
+              <div className="absolute inset-0 rounded-full border-4 border-primary/30"></div>
+              <div className="absolute inset-4 rounded-full border-2 border-primary/20"></div>
+               <Image
+                src={profileImage.imageUrl}
+                alt="Portrait de Jensen"
+                width={400}
+                height={400}
+                className="rounded-full object-cover h-full w-full"
+                data-ai-hint={profileImage.imageHint}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="container mx-auto px-4 md:px-6 mt-20">
+        <div className="flex justify-around items-center text-muted-foreground font-medium text-lg">
+          <span>HTML5</span>
+          <span>CSS</span>
+          <span>Javascript</span>
+          <span>Node.js</span>
+          <span>React</span>
+          <span>Git</span>
+          <span>Github</span>
         </div>
       </div>
     </section>

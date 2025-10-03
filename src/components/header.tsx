@@ -2,14 +2,12 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Code2 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const navLinks = [
-  { href: '#about', label: 'About' },
-  { href: '#skills', label: 'Skills' },
-  { href: '#projects', label: 'Projects' },
-  { href: '#ai-analyzer', label: 'AI Analyzer' },
+  { href: '#home', label: 'Accueil' },
+  { href: '#about', label: 'À propos' },
+  { href: '#projects', label: 'Projets' },
   { href: '#contact', label: 'Contact' },
 ];
 
@@ -29,16 +27,15 @@ export function Header() {
       className={cn(
         'sticky top-0 z-50 w-full transition-all duration-300',
         isScrolled
-          ? 'bg-background/80 backdrop-blur-md border-b'
+          ? 'bg-background/80 backdrop-blur-md'
           : 'bg-transparent'
       )}
     >
-      <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
-        <Link href="/" className="flex items-center gap-2 font-headline text-lg font-semibold">
-          <Code2 className="h-6 w-6 text-primary" />
-          <span>Éclat de Code</span>
+      <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
+        <Link href="/" className="font-headline text-lg font-semibold">
+          <span>Jensen Omega</span>
         </Link>
-        <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
+        <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
           {navLinks.map(({ href, label }) => (
             <Link
               key={label}
