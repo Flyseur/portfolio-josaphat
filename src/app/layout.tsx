@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: 'Boua Josaphat Olivier Konan - Développeur Full Stack',
   description: 'Portfolio de Boua Josaphat Olivier Konan, un développeur full stack créatif.',
   icons: {
-    icon: 'https://i.postimg.cc/HWZYZZwB/icon.png',
+    icon: 'https://i.postimg.cc/HWZYZZwB/icon.png?v=2',
   },
 };
 
