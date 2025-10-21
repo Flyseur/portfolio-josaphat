@@ -5,7 +5,7 @@ import { getPlaceholderImage } from "@/lib/placeholder-images";
 
 export function HeroSection() {
   const profileImage = getPlaceholderImage('profile') ?? {
-    imageUrl: 'https://storage.googleapis.com/project-os-frontend-bucket/production/1759530495372/W-P5_LqC/image.png',
+    imageUrl: 'https://storage.googleapis.com/project-os-frontend-bucket/production/1759600898555/ZJb2_JgT/image.png',
     imageHint: 'professional portrait man',
   };
 
