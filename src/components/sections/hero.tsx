@@ -4,11 +4,7 @@ import { Button } from "@/components/ui/button";
 import { getPlaceholderImage } from "@/lib/placeholder-images";
 
 export function HeroSection() {
-  const profileImage = getPlaceholderImage('profile') ?? {
-    imageUrl: 'https://storage.googleapis.com/project-os-frontend-bucket/production/1759600898555/ZJb2_JgT/image.png',
-    imageHint: 'professional portrait man',
-  };
-
+  const profileImage = getPlaceholderImage("profile");
   return (
     <section id="home" className="pt-24 pb-12 md:pt-32 md:pb-20 overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
@@ -38,15 +34,15 @@ export function HeroSection() {
             <div className="relative h-64 w-64 md:h-80 md:w-80 lg:h-96 lg:w-96">
               <div className="absolute inset-0 rounded-full border-4 border-primary/30 animate-scale-in animation-delay-800"></div>
               <div className="absolute inset-4 rounded-full border-2 border-primary/20 animate-scale-in animation-delay-1000"></div>
-               <Image
+              {profileImage && <Image
                 src={profileImage.imageUrl}
-                alt="Portrait de Boua Josaphat Olivier Konan"
+                alt={profileImage.description}
                 width={400}
                 height={400}
                 className="rounded-full object-cover h-full w-full"
                 data-ai-hint={profileImage.imageHint}
                 priority
-              />
+              />}
             </div>
           </div>
         </div>
