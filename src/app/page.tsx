@@ -2,7 +2,8 @@ import { Header } from '@/components/header';
 import { HeroSection } from '@/components/sections/hero';
 import { AboutSection } from '@/components/sections/about';
 import { ProjectsSection } from '@/components/sections/projects';
-import { ContactSection } from '@/components/sections/contact';
+import { AiAnalyzerSection } from '@/components/sections/ai-analyzer';
+import { SkillsSection } from '@/components/sections/skills';
 import { Footer } from '@/components/footer';
 
 export default function Home() {
@@ -13,7 +14,8 @@ export default function Home() {
         <HeroSection />
         <AboutSection />
         <ProjectsSection />
-        <ContactSection />
+        <SkillsSection />
+        <AiAnalyzerSection />
       </main>
       <Footer />
     </div>
