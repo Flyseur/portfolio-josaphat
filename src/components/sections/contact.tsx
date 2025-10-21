@@ -1,3 +1,4 @@
+
 import { Mail, Phone, Facebook } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
@@ -13,8 +14,8 @@ export function ContactSection() {
     {
       icon: <Phone className="h-6 w-6 text-primary" />,
       label: 'Téléphone',
-      value: '+225 05-44-63-34-31',
-      href: 'tel:+2250544633431',
+      value: '+225 07 893 958 19',
+      href: 'tel:+2250789395819',
     },
     {
       icon: <Facebook className="h-6 w-6 text-primary" />,
